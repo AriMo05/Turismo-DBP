@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="title">Habitaciones Disponibles</h2>
+
+  <button class="reload-button" (click)="obtenerHabitaciones()">🔄 Recargar</button>
+
+  <div *ngIf="cargando" class="loading">Cargando habitaciones...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="habitaciones" *ngIf="habitaciones.length > 0">
+    <div class="habitacion" *ngFor="let hab of habitaciones">
+      <h3 class="habitacion-title">{{ hab.nombre_hotel }} - Hab. {{ hab.num_hab }}</h3>
+      <p><strong>Lugar:</strong> {{ hab.lugar.nombre }}</p>
+      <p><strong>Capacidad:</strong> {{ hab.capacidad }} personas</p>
+      <p><strong>Precio:</strong> ${{ hab.precio }}</p>
+      <p class="descripcion">{{ hab.descripcion }}</p>
+    </div>
+  </div>
+
+  <p *ngIf="!cargando && habitaciones.length === 0" class="no-data">No hay habitaciones disponibles.</p>
+</div>
+

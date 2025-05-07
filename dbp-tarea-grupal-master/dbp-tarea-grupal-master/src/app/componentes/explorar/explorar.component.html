@@ -1,0 +1,23 @@
+<!-- Sección: Explorar lugares -->
+<section id="explorar" class="seccion">
+  <header>
+    <h1>Lugares Turísticos Galápagos</h1>
+    <p>Explora los destinos más fascinantes Galápagos</p>
+  </header>
+
+  <div *ngIf="cargando">Cargando lugares...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="lugares" *ngIf="lugares.length > 0">
+    <div class="lugar" *ngFor="let lugar of lugares">
+      <img [src]="lugar.imagen" [alt]="lugar.nombre" />
+      <h2>{{ lugar.nombre }}</h2>
+      <p>{{ lugar.descripcion }}</p>
+      <div class="search-container">
+        <button class="search-button" (click)="buscarHabitaciones(lugar.id)">Buscar Habitaciones</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="!cargando && lugares.length === 0">No hay lugares disponibles.</p>
+</section>

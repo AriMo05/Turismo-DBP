@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  header {
+    background-image: url('https://yachtanahi.com/wp-content/uploads/2023/02/las-mejores-playas-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 110px 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .lugares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .lugar {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .lugar:hover {
+    transform: scale(1.02);
+  }
+  
+  .lugar img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .lugar h2 {
+    margin: 16px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .lugar p {
+    margin: 0 16px 16px;
+    color: #555;
+  }
+  
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .search-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .search-button:hover {
+    background-color: #0056b3;
+  }
