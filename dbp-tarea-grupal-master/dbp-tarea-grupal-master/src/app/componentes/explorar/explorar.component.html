@@ -1,4 +1,5 @@
 <!-- Sección: Explorar lugares -->
+ <h1>hh</h1>
 <section id="explorar" class="seccion">
   <header>
     <h1>Lugares Turísticos Galápagos</h1>
@@ -8,7 +9,15 @@
   <div *ngIf="cargando">Cargando lugares...</div>
   <div *ngIf="error" class="error">{{ error }}</div>
 
-  <div class="lugares" *ngIf="lugares.length > 0">
+  <!-- Mostrar lugar seleccionado -->
+  <div *ngIf="lugarSeleccionado">
+    <h2>{{ lugarSeleccionado.nombre }}</h2>
+    <img [src]="lugarSeleccionado.imagen" [alt]="lugarSeleccionado.nombre" />
+    <p>{{ lugarSeleccionado.descripcion }}</p>
+  </div>
+
+  <!-- Mostrar lista de lugares si no hay lugar seleccionado -->
+  <div class="lugares" *ngIf="!lugarSeleccionado && lugares.length > 0">
     <div class="lugar" *ngFor="let lugar of lugares">
       <img [src]="lugar.imagen" [alt]="lugar.nombre" />
       <h2>{{ lugar.nombre }}</h2>

@@ -37,9 +37,12 @@
               }
             ],
             "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+              "src/styles.css",
+             "leaflet/dist/leaflet.css"
+          ],
+             "scripts": [
+              
+             ]
           },
           "configurations": {
             "production": {

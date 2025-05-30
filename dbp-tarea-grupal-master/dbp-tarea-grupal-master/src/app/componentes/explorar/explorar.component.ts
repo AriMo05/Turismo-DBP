@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; // Importa el servicio Router
+import { LugarService } from '../../servicios/lugar.service';
 
 @Component({
   selector: 'app-explorar',
@@ -12,11 +13,18 @@ export class ExplorarComponent implements OnInit {
   lugares: any[] = [];
   cargando: boolean = false;
   error: string = '';
+  lugarSeleccionado: any = null;
 
-  constructor(private http: HttpClient, private router: Router) {} // Inyecta el servicio Router
+  constructor(private http: HttpClient, private router: Router, private lugarService: LugarService) {} // Inyecta el servicio Router
 
   ngOnInit(): void {
     this.cargarLugares();
+
+    // Suscribirse al servicio para obtener el lugar seleccionado
+    this.lugarService.lugarSeleccionado$.subscribe(lugar => {
+      console.log('Lugar recibido en ExplorarComponent:', lugar); // Verifica que los datos lleguen correctamente
+      this.lugarSeleccionado = lugar;
+    });
   }
 
   cargarLugares(): void {
